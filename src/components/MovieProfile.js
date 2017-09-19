@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const MovieProfile = (props) => {
+export const MovieProfile = ({movie}) => {
   return (
     <ul>
-      <li>{props.movie.title}</li>
-      <li>{props.movie.director}</li>
+      <li>{movie.title}</li>
+      <li>{movie.director}</li>
     </ul>
   );
 };

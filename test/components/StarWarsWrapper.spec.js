@@ -1,13 +1,16 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import {StarWarsWrapper, LeftSidebar, MainPanel} from '../../src/components';
+import {mount, shallow} from 'enzyme';
+import {CrawlChart, StarWarsWrapper, LeftSidebar, MainPanel} from '../../src/components';
 
 describe('StarWarsWrapper component', () => {
   describe('render', () => {
-    const wrapper = shallow(<StarWarsWrapper />);
+    const wrapper = mount(<StarWarsWrapper />);
+    
     it('should render child nodes', () => {
-      expect((wrapper).contains(<LeftSidebar />)).toBe(true);
-      expect((wrapper).contains(<MainPanel />)).toBe(true);
+      const inst = wrapper.instance();
+      
+      expect((wrapper).contains(<LeftSidebar><CrawlChart crawl={inst.state.movies}/></LeftSidebar>)).toBe(true);
+      expect((wrapper).contains(<MainPanel movies={inst.state.movies} />)).toBe(true);
     });
   });
 

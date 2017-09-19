@@ -1,10 +1,10 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
 import {LeftSidebar} from '../../src/components';
 
-describe('StarWarsWrapper component', () => {
+describe('LeftSidebar component', () => {
   it('should render child nodes', () => {
-    const wrapper = shallow(<LeftSidebar />);
+    const wrapper = mount(<LeftSidebar><div></div></LeftSidebar>);
     expect((wrapper).contains(<h3>Left Sidebar</h3>)).toBe(true);
   });
 });
