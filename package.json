@@ -1,9 +1,12 @@
 {
-  "name": "react-boilerplate",
+  "name": "star-wars-project",
   "version": "0.0.1",
-  "description": "New App",
+  "description": "Star Wars Micro App",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.16.2",
+    "immutability-helper": "^2.3.1",
+    "lodash.chunk": "^4.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
@@ -17,19 +20,21 @@
     "babel-preset-stage-0": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "browserify-css": "^0.12.0",
     "enzyme": "^2.9.1",
     "enzyme-to-json": "^2.0.0",
     "eslint": "^4.5.0",
     "eslint-plugin-react": "^7.3.0",
     "http-server": "^0.10.0",
     "jest": "^21.1.0",
+    "prop-types": "^15.5.10",
     "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
     "regenerator-runtime": "^0.11.0"
   },
   "scripts": {
     "dev": "npm run dist && http-server -o ./dist/index.html",
-    "dist": "cp ./src/index.html ./dist/. && browserify src/index.js -o dist/app.js -t [ babelify --presets [ es2015 react ] ]",
+    "dist": "cp ./src/index.html ./dist/. && cp ./src/assets/app.css ./dist/. && browserify src/index.js -o dist/app.js -t [ babelify --presets [ es2015 react ] ]",
     "test": "node ./node_modules/jest/bin/jest.js",
     "test:coverage": "node ./node_modules/jest/bin/jest.js --coverage"
   },
