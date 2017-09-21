@@ -3,6 +3,9 @@
 }
 
 .movie-card {
-  border: 1px solid#aaa;
   width: 465px;
+}
+
+li {
+  list-style-type: none;
 }
