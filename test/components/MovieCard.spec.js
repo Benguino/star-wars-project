@@ -6,7 +6,7 @@ describe('MovieCard component', () => {
   it('should render child nodes', () => {
     const wrapper = mount(<MovieCard props={{card: 'card'}}></MovieCard>);
     expect((wrapper).contains(
-      <div className='col-lg-4 col-md-6 col-sm-12 movie-card'>
+      <div className='col-xs-12 col-sm-6 col-md-4 movie-card'>
         <div className='row'>
           {wrapper.props.card}
         </div>  
