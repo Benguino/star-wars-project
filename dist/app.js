@@ -26282,7 +26282,7 @@ var MovieCard = exports.MovieCard = function MovieCard(props) {
 
   return _react2.default.createElement(
     'div',
-    { className: 'col-lg-4 col-md-6 col-sm-12 movie-card' },
+    { className: 'col-xs-12 col-sm-6 col-md-4 movie-card' },
     _react2.default.createElement(
       'div',
       { className: 'row' },
