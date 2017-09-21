@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 export const MovieCard = (props) => {
 
   return (
-    <div 
-      className='col-md-4 col-sm-6 movie-card'>
-      {props.card}
+    <div className='col-xs-3 movie-card'>
+      <div className='row'> 
+        {props.children}
+      </div>
     </div>
   );
 };
 
 MovieCard.propTypes = {
-  card: PropTypes.any
+  children: PropTypes.any
 };

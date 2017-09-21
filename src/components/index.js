@@ -4,7 +4,7 @@ import {LeftSidebar} from './LeftSidebar.js';
 import {MainPanel} from './MainPanel.js';
 import {MovieCard} from './MovieCard.js';
 import {MovieProfile} from './MovieProfile.js';
-import {StarWarsWrapper} from './StarWarsWrapper.js';
+import {StarWarsContainer} from './StarWarsContainer.js';
 
 export {
   CharacterCard,
@@ -13,5 +13,5 @@ export {
   MainPanel,
   MovieCard,
   MovieProfile,
-  StarWarsWrapper
+  StarWarsContainer
 };

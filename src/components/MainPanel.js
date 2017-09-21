@@ -10,9 +10,9 @@ export const MainPanel = ({movies}) => {
   });
 
   return (
-    <div className='col-md-9 col-sm-6' id='main-panel'>
+    <div className='col-md-10 col-sm-8' id='main-panel'>
       <h3>Main Panel</h3>
-      {movieCards.map((card, index) => <MovieCard key={index} card={card} />)}
+      {movieCards.map((card, index) => <MovieCard key={index}>{card}</MovieCard>)}
     </div>
   );
 };

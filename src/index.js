@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {StarWarsWrapper} from './components';
+import {StarWarsContainer} from './components';
 
-ReactDOM.render(<StarWarsWrapper/>, document.getElementById('reactContainer'));
+ReactDOM.render(<StarWarsContainer/>, document.getElementById('reactContainer'));
 

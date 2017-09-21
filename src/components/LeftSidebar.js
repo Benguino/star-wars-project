@@ -9,7 +9,7 @@ export class LeftSidebar extends React.Component {
 
   render() {
     return (
-      <div className='col-md-3 col-sm-4' id='main-panel'>
+      <div className='col-md-2 col-sm-4' id='left-sidebar'>
         <h3>Left Sidebar</h3>
         <CharacterCard char_id={3} />
         <CharacterCard char_id={5} />

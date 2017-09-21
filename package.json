@@ -5,8 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.16.2",
+    "bluebird": "^3.5.0",
+    "es6-promise": "^4.1.1",
     "immutability-helper": "^2.3.1",
     "lodash.chunk": "^4.2.0",
+    "lodash.shuffle": "^4.2.0",
+    "lodash.take": "^4.1.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
@@ -34,7 +38,8 @@
   },
   "scripts": {
     "dev": "npm run dist && http-server -o ./dist/index.html",
-    "dist": "cp ./src/index.html ./dist/. && cp ./src/assets/app.css ./dist/. && browserify src/index.js -o dist/app.js -t [ babelify --presets [ es2015 react ] ]",
+    "dist:copy": "cp ./src/index.html ./dist/. && cp ./src/assets/app.css ./dist/. && cp ./src/assets/images/* ./dist/assets/.",
+    "dist": "npm run dist:copy && browserify src/index.js -o dist/app.js -t [ babelify --presets [ es2015 react ] ]",
     "test": "node ./node_modules/jest/bin/jest.js",
     "test:coverage": "node ./node_modules/jest/bin/jest.js --coverage"
   },

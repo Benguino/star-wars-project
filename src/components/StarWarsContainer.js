@@ -3,7 +3,7 @@ import update from 'immutability-helper';
 import {CrawlChart, LeftSidebar, MainPanel} from './';
 import {fetchMovies} from '../services';
 
-export class StarWarsWrapper extends React.Component {
+export class StarWarsContainer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -31,7 +31,7 @@ export class StarWarsWrapper extends React.Component {
 
   render() {
     return (
-      <div className='containter' id='star-wars-wrapper'>
+      <div className='containter' id='star-wars-container'>
         <div className='row'>
           <LeftSidebar>
             <CrawlChart crawl={this.state.movies} />

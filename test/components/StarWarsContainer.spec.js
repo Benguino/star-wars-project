@@ -1,10 +1,10 @@
 import React from 'react';
 import {mount, shallow} from 'enzyme';
-import {CrawlChart, StarWarsWrapper, LeftSidebar, MainPanel} from '../../src/components';
+import {CrawlChart, StarWarsContainer, LeftSidebar, MainPanel} from '../../src/components';
 
-describe('StarWarsWrapper component', () => {
+describe('StarWarsContainer component', () => {
   describe('render', () => {
-    const wrapper = mount(<StarWarsWrapper />);
+    const wrapper = mount(<StarWarsContainer />);
     
     it('should render child nodes', () => {
       const inst = wrapper.instance();
@@ -15,7 +15,7 @@ describe('StarWarsWrapper component', () => {
   });
 
   describe('#componentDidMount', () => {
-    const wrapper = shallow(<StarWarsWrapper />);
+    const wrapper = shallow(<StarWarsContainer />);
     it('should invoke #getMovies', () => {
       const inst = wrapper.instance();
       const fetchMoviesSpy = jest.spyOn(inst, 'fetchMovies');
@@ -26,7 +26,7 @@ describe('StarWarsWrapper component', () => {
   });
 
   xdescribe('#getMovies', () => {
-    const wrapper = shallow(<StarWarsWrapper />);
+    const wrapper = shallow(<StarWarsContainer />);
     it('should update state with a new movie', () => {
       const inst = wrapper.instance();
 

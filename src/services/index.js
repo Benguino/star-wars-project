@@ -5,4 +5,9 @@ const fetchMovies = () => {
   return axios.get(SWAPI + 'films/');
 };
 
-export { fetchMovies };
+const fetchResourceByUrl = (url) => {
+  return axios.get(url);
+};
+
+export { fetchMovies, fetchResourceByUrl };
+
