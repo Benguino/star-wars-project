@@ -1,5 +1,6 @@
 import React from 'react';
 import update from 'immutability-helper';
+import _pick from 'lodash.pick';
 import {CrawlChart, LeftSidebar, MainPanel} from './';
 import {fetchMovies} from '../services';
 
@@ -34,7 +35,7 @@ export class StarWarsContainer extends React.Component {
       <div className='containter' id='star-wars-container'>
         <div className='row'>
           <LeftSidebar>
-            <CrawlChart crawl={this.state.movies} />
+            <CrawlChart movies={this.state.movies} />
           </LeftSidebar>
           <MainPanel movies={this.state.movies}/>
         </div>
