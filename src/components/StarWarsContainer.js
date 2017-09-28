@@ -1,7 +1,6 @@
 import React from 'react';
 import update from 'immutability-helper';
-import _pick from 'lodash.pick';
-import {CrawlChart, LeftSidebar, MainPanel} from './';
+import {CharacterCard, CrawlChart, LeftSidebar, MainPanel} from './';
 import {fetchMovies} from '../services';
 
 export class StarWarsContainer extends React.Component {
@@ -22,7 +21,7 @@ export class StarWarsContainer extends React.Component {
   componentDidMount() {
     this.fetchMovies()
       .then((result) => {
-        let sortedResults = result.data.results.sort((a,b) => a.episode_id > b.episode_id);
+        let sortedResults = result.data.results.sort((a,b) => { return (a.episode_id > b.episode_id) ? 1 : -1;});
         this.setState(update(this.state, {movies: {$push: sortedResults}}));
       })
       .catch((error) => {
@@ -35,6 +34,8 @@ export class StarWarsContainer extends React.Component {
       <div className='containter' id='star-wars-container'>
         <div className='row'>
           <LeftSidebar>
+            <CharacterCard id='fav_char'/>
+            <CharacterCard id='worst_char'/>
             <CrawlChart movies={this.state.movies} />
           </LeftSidebar>
           <MainPanel movies={this.state.movies}/>

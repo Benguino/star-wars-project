@@ -1,6 +1,6 @@
 import React from 'react';
 import {mount, shallow} from 'enzyme';
-import {CrawlChart, StarWarsContainer, LeftSidebar, MainPanel} from '../../src/components';
+import {CrawlChart, CharacterCard, StarWarsContainer, LeftSidebar, MainPanel} from '../../src/components';
 
 describe('StarWarsContainer component', () => {
   describe('render', () => {
@@ -9,7 +9,17 @@ describe('StarWarsContainer component', () => {
     it('should render child nodes', () => {
       const inst = wrapper.instance();
       
-      expect((wrapper).contains(<LeftSidebar><CrawlChart crawl={inst.state.movies}/></LeftSidebar>)).toBe(true);
+      expect((wrapper).contains(
+        <div className='containter' id='star-wars-container'>
+          <div className='row'>
+            <LeftSidebar>
+              <CharacterCard id='fav_char'/>
+              <CharacterCard id='worst_char'/>
+              <CrawlChart movies={inst.state.movies} />
+            </LeftSidebar>
+            <MainPanel movies={inst.state.movies}/>
+          </div>
+        </div>)).toBe(true);
       expect((wrapper).contains(<MainPanel movies={inst.state.movies} />)).toBe(true);
     });
   });

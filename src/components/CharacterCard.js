@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const CharacterCard = ({char_id}) => {
+export const CharacterCard = ({id}) => {
   return (
-    <ul>
-      <li>Character ID {char_id}</li>
-    </ul>
+    <div className='character-card'>
+      <h3>{(id == 'fav_char') ? 'Best Character' : 'Worst Character'}</h3>
+      <img src={'./assets/' + (id == 'fav_char' ? 'bobafett' : 'jjb') + '.gif'} />
+    </div>
   );
 };
 
 CharacterCard.propTypes = {
-  char_id: PropTypes.number.isRequired
+  id: PropTypes.string
 };

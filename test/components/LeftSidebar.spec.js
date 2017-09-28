@@ -4,7 +4,7 @@ import {LeftSidebar} from '../../src/components';
 
 describe('LeftSidebar component', () => {
   it('should render child nodes', () => {
-    const wrapper = mount(<LeftSidebar><div></div></LeftSidebar>);
-    expect((wrapper).contains(<h3>Left Sidebar</h3>)).toBe(true);
+    const wrapper = mount(<LeftSidebar><h3>Child Header</h3></LeftSidebar>);
+    expect((wrapper).contains(<h3>Child Header</h3>)).toBe(true);
   });
 });

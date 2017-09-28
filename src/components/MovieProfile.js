@@ -33,16 +33,20 @@ export class MovieProfile extends React.Component {
 
   render() {
     return (
-      <div className="col-xs-6">
+      <div className='col-xs-6'>
         <img 
-          width="auto"
-          height="300px"
+          width='auto'
+          height='300px'
           src={'./assets/' + this.props.movie.episode_id + '.jpg'} 
         />
+        <h4 className='title'>{this.props.movie.title}</h4>
         <ul>
-          <li>{this.props.movie.title}</li>
-          <li>{this.props.movie.director}</li>
-          {this.state.names.map((name, index) => <li key={index}>{name}</li>)}
+          <li className='director'>Director: {this.props.movie.director}</li>
+          <li>Some Characters:
+            <p>
+              {this.state.names.join(', ')}
+            </p>
+          </li>
         </ul>
       </div>
     );

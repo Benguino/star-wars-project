@@ -5,6 +5,6 @@ import {MainPanel} from '../../src/components';
 describe('MainPanel component', () => {
   it('should render child nodes', () => {
     const wrapper = shallow(<MainPanel />);
-    expect((wrapper).contains(<h3>Main Panel</h3>)).toBe(true);
+    expect((wrapper).contains(<h3>The Movies</h3>)).toBe(true);
   });
 });
